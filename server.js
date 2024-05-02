@@ -7,6 +7,7 @@ const employeeRoutes = require('./routes/employeeRoutes')
 const app = express()
 
 const PORT = process.env.PORT || 5500 
+
 dotenv.config()
 app.use(bodyParser.json())
 
@@ -22,4 +23,8 @@ app.use('/employees',employeeRoutes)
 
 app.listen(PORT, ()=>{
     console.log(`Server Started and running at ${PORT}`)
+})
+
+app.use('/', (req, res) =>{
+    res.send("<h1>Welcome to EpiMax")
 })
